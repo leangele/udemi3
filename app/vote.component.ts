@@ -9,7 +9,13 @@ import { Component } from '@angular/core';
            <i class="glyphicon glyphicon-menu-down" [class.blue]="voteDown" (click)="onClick($event,-1)"></i>
        </div>
     `,
-    styles:[`blue{ color: red;}
+    styles:[`
+        .glyphicon{
+            cursor:pointer;
+        }
+        .blue{
+         color: blue;
+        }
     `]
 })
 

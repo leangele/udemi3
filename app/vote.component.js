@@ -41,7 +41,7 @@ VoteComponent = __decorate([
     core_1.Component({
         selector: 'vote',
         template: "\n    <div style=\"width=20px\">\n            <i class=\"glyphicon glyphicon-menu-up\" [class.blue]=\"voteUp\" (click)=\"onClick($event,+1)\"></i>\n            <span>{{votes}}</span>\n           <i class=\"glyphicon glyphicon-menu-down\" [class.blue]=\"voteDown\" (click)=\"onClick($event,-1)\"></i>\n       </div>\n    ",
-        styles: ["blue{ color: red;}\n    "]
+        styles: ["\n        .glyphicon{\n            cursor:pointer;\n        }\n        .blue{\n         color: blue;\n        }\n    "]
     })
 ], VoteComponent);
 exports.VoteComponent = VoteComponent;
