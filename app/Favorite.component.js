@@ -33,7 +33,7 @@ FavoriteComponent = __decorate([
     core_1.Component({
         selector: 'favorite',
         templateUrl: 'app/favorite.template.html',
-        styles: ["\n    .glyphicon-heart{\n        color:#ccc;\n        cursor: pointer;\n    },  \n    .highlighted{}\n        color:deeppink;  \n    "]
+        styles: ["\n    .glyphicon-heart{\n        color:#ccc;\n        cursor: pointer;\n    },  \n    .highlighted{\n        color:deeppink; \n    }\n         \n    "]
     })
 ], FavoriteComponent);
 exports.FavoriteComponent = FavoriteComponent;

@@ -7,7 +7,10 @@
     title = "hola mundo";
     isActive = false;
       post={
-      isFavorite: true,
-      quantity:50
+      initVotes:50,
+      Votes:50
+    }
+    eventVote($event){
+      console.log($event);
     }
   }

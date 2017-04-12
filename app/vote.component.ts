@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
     selector:'vote',
     template:`
-    <div style="width=20px">
-            <i class="glyphicon glyphicon-menu-up" [class.blue]="voteUp" (click)="onClick($event,+1)"></i>
+    <div class="voter">
+            <i class="glyphicon glyphicon-menu-up vote-button" [class.blue]="voteUp" (click)="onClick($event,+1)"></i>
             <span>{{votes}}</span>
-           <i class="glyphicon glyphicon-menu-down" [class.blue]="voteDown" (click)="onClick($event,-1)"></i>
+           <i class="glyphicon glyphicon-menu-down vote-button" [class.blue]="voteDown" (click)="onClick($event,-1)"></i>
        </div>
     `,
     styles:[`
-        .glyphicon{
+        .voter{
+        width:20px;
+        text-align:center;
+        color=#999
+        }
+        .vote-button{
             cursor:pointer;
         }
         .blue{
@@ -21,18 +26,16 @@ import { Component } from '@angular/core';
 
 export class VoteComponent{
     
-    initVotes=10;    
-    votes=this.initVotes;
+    @Input("init-Votes") initVotes=10;    
+    @Input("votes")votes=this.initVotes;
     voteUp=false;
     voteDown=false;
     maxUp=1;
     minDown=-1;
+    @Output() change=new EventEmitter();
     onClick($event,vote){
         this.votes = this.votes+vote;
-        if(this.initVotes+this.maxUp<=this.votes)
-            this.votes = this.votes+vote;
-
-        
+       
         if (this.votes==this.initVotes) {
             this.voteUp=false;
             this.voteDown=false;
@@ -46,6 +49,7 @@ export class VoteComponent{
                 this.voteDown=true;
             }
         }
+        this.change.emit({newValue:this.votes});
     }
    
 }

@@ -1,2 +1,5 @@
 <h1>{{title}}</h1>
-        <vote></vote>
+        <vote [init-Votes]="post.initVotes" [votes]="post.Votes" (change)="eventVote($event)"></vote>
+<br>
+<br>
+<tweet></tweet>

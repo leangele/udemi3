@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
 var Favorite_component_1 = require("./Favorite.component");
 var vote_component_1 = require("./vote.component");
+var tweet_component_1 = require("./tweet.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,6 +28,7 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             Favorite_component_1.FavoriteComponent,
             vote_component_1.VoteComponent,
+            tweet_component_1.TweetComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

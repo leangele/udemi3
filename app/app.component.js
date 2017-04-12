@@ -12,10 +12,13 @@ var AppComponent = (function () {
         this.title = "hola mundo";
         this.isActive = false;
         this.post = {
-            isFavorite: true,
-            quantity: 50
+            initVotes: 50,
+            Votes: 50
         };
     }
+    AppComponent.prototype.eventVote = function ($event) {
+        console.log($event);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([

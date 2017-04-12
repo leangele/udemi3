@@ -7,8 +7,10 @@ import { Component,Input } from '@angular/core';
         color:#ccc;
         cursor: pointer;
     },  
-    .highlighted{}
-        color:deeppink;  
+    .highlighted{
+        color:deeppink; 
+    }
+         
     `]
 })
 export class FavoriteComponent{

@@ -4,6 +4,7 @@ import { AppComponent }   from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './Favorite.component';
 import { VoteComponent } from './vote.component';
+import { TweetComponent } from './tweet.component'
 @NgModule({
   imports:      [ 
     BrowserModule,
@@ -12,6 +13,7 @@ import { VoteComponent } from './vote.component';
     AppComponent,
     FavoriteComponent,
     VoteComponent,
+    TweetComponent,
     ],
   bootstrap:    [ AppComponent ]
 })
