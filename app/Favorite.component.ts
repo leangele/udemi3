@@ -1,12 +1,18 @@
 import { Component,Input } from '@angular/core';
 @Component({
     selector:'favorite',
-    templateUrl:'app/favorite.template.html',
+    template:`
+    <i class="glyphicon glyphicon-heart" 
+        [class.highlighted]="isFavorite" 
+        (click)="onClick()"></i>
+        <span>{{quantity}}</span>
+
+    `,
     styles:[`
     .glyphicon-heart{
         color:#ccc;
         cursor: pointer;
-    },  
+    }
     .highlighted{
         color:deeppink; 
     }
@@ -15,7 +21,7 @@ import { Component,Input } from '@angular/core';
 })
 export class FavoriteComponent{
     @Input() quantity=3;
-    @Input('is-Favorite') isFavorite=false;
+    @Input() isFavorite=false;
     onClick(){
         this.isFavorite=!this.isFavorite;
         this.quantity+=this.isFavorite?1:-1;

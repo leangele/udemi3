@@ -4,7 +4,9 @@ import { AppComponent }   from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './Favorite.component';
 import { VoteComponent } from './vote.component';
-import { TweetComponent } from './tweet.component'
+import { TweetsComponent } from './tweets.component';
+import { TweetComponent } from './tweet.component';
+import { TweetService } from './tweet.service';
 @NgModule({
   imports:      [ 
     BrowserModule,
@@ -13,8 +15,10 @@ import { TweetComponent } from './tweet.component'
     AppComponent,
     FavoriteComponent,
     VoteComponent,
+    TweetsComponent,
     TweetComponent,
     ],
+    providers:[TweetService,],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

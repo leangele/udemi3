@@ -12,7 +12,9 @@ var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
 var Favorite_component_1 = require("./Favorite.component");
 var vote_component_1 = require("./vote.component");
+var tweets_component_1 = require("./tweets.component");
 var tweet_component_1 = require("./tweet.component");
+var tweet_service_1 = require("./tweet.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,8 +30,10 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             Favorite_component_1.FavoriteComponent,
             vote_component_1.VoteComponent,
+            tweets_component_1.TweetsComponent,
             tweet_component_1.TweetComponent,
         ],
+        providers: [tweet_service_1.TweetService,],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

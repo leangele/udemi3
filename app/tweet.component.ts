@@ -1,42 +1,39 @@
-import {Component} from "@angular/core";
-import { FavoriteComponent } from './Favorite.component';
+import {Component, Input} from '@angular/core';
 @Component({
-    selector:"tweet",
+    selector:'tweet',
     template:`
-    <div *ngFor="let tweettotal of tweetsTotal">
-        <div class="media">
+    <div class="media">
             <div class="media-left">
                 <a href="#">
-                    <img class="media-object" [src]="image" alt="...">
+                    <img class="media-object" [src]="data.imageUrl" alt="...">
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">{{author}}<span class="gray">{{tweeterHandler}}</span></h4>
-                <p>{{tweet}}</p>
-                <favorite [quantity]="" ></favorite>
+                <h4 class="media-heading">
+                    {{ data.author }}<span class="gray">{{data.handle}}
+                </span></h4>
+                <p>{{data.body}}</p>
+                <favorite [quantity]="data.totalLikes" [isFavorite]="data.iLike"></favorite>
             </div>
         </div>
-    </div>
     `,
+    styles:[`
+    .gray{
+         color: #ccc;
+    }
+     .media {
+            margin-bottom: 20px;
+        }
+        
+        .media-object {
+            border-radius: 10px;
+        }
+    `]
 })
-
 export class TweetComponent{
-    like = false;
+    @Input() data;
+    constructor(){
+        console.log(this.data);
+    }
     
-    tweetsTotal: [{
-        image: "http://lorempixel.com/100/100/people?1", 
-        author:"author1",
-        tweeterHandler:"@tweet1",
-        countLikes:5,
-        tweet:"short Message" },{
-        image: "http://lorempixel.com/100/100/people?1", 
-        author:"author2",
-        tweeterHandler:"@tweet2",
-        countLikes:9,
-        tweet:"short Message" },{
-        image: "http://lorempixel.com/100/100/people?1", 
-        author:"author3",
-        tweeterHandler:"@tweet3",
-        countLikes:1,
-        tweet:"short Message" }]
 }

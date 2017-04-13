@@ -26,14 +26,14 @@ __decorate([
     __metadata("design:type", Object)
 ], FavoriteComponent.prototype, "quantity", void 0);
 __decorate([
-    core_1.Input('is-Favorite'),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], FavoriteComponent.prototype, "isFavorite", void 0);
 FavoriteComponent = __decorate([
     core_1.Component({
         selector: 'favorite',
-        templateUrl: 'app/favorite.template.html',
-        styles: ["\n    .glyphicon-heart{\n        color:#ccc;\n        cursor: pointer;\n    },  \n    .highlighted{\n        color:deeppink; \n    }\n         \n    "]
+        template: "\n    <i class=\"glyphicon glyphicon-heart\" \n        [class.highlighted]=\"isFavorite\" \n        (click)=\"onClick()\"></i>\n        <span>{{quantity}}</span>\n\n    ",
+        styles: ["\n    .glyphicon-heart{\n        color:#ccc;\n        cursor: pointer;\n    }\n    .highlighted{\n        color:deeppink; \n    }\n         \n    "]
     })
 ], FavoriteComponent);
 exports.FavoriteComponent = FavoriteComponent;
