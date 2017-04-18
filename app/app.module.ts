@@ -7,6 +7,7 @@ import { VoteComponent } from './vote.component';
 import { TweetsComponent } from './tweets.component';
 import { TweetComponent } from './tweet.component';
 import { TweetService } from './tweet.service';
+  import { SummaryPipe } from './summary.pipe';
 @NgModule({
   imports:      [ 
     BrowserModule,
@@ -17,8 +18,9 @@ import { TweetService } from './tweet.service';
     VoteComponent,
     TweetsComponent,
     TweetComponent,
+    SummaryPipe
     ],
-    providers:[TweetService,],
-  bootstrap:    [ AppComponent ]
+  providers:[TweetService,],    
+    bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

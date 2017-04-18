@@ -32,8 +32,8 @@ __decorate([
 FavoriteComponent = __decorate([
     core_1.Component({
         selector: 'favorite',
-        template: "\n    <i class=\"glyphicon glyphicon-heart\" \n        [class.highlighted]=\"isFavorite\" \n        (click)=\"onClick()\"></i>\n        <span>{{quantity}}</span>\n\n    ",
-        styles: ["\n    .glyphicon-heart{\n        color:#ccc;\n        cursor: pointer;\n    }\n    .highlighted{\n        color:deeppink; \n    }\n         \n    "]
+        template: "\n    <i class=\"glyphicon\" \n      \n        [ngClass]=\"{\n            'glyphicon-star-empty':!isFavorite,\n            'glyphicon-star':isFavorite,\n            'highlighted':isFavorite\n        }\"\n        (click)=\"onClick()\"></i>\n        <span>{{quantity}}</span>\n\n    ",
+        styles: ["\n    .glyphicon{\n        color:#ccc;\n        cursor: pointer;\n    }\n    .highlighted{\n        color:deeppink; \n    }\n         \n    "]
     })
 ], FavoriteComponent);
 exports.FavoriteComponent = FavoriteComponent;

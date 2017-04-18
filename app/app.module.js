@@ -15,6 +15,7 @@ var vote_component_1 = require("./vote.component");
 var tweets_component_1 = require("./tweets.component");
 var tweet_component_1 = require("./tweet.component");
 var tweet_service_1 = require("./tweet.service");
+var summary_pipe_1 = require("./summary.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,6 +33,7 @@ AppModule = __decorate([
             vote_component_1.VoteComponent,
             tweets_component_1.TweetsComponent,
             tweet_component_1.TweetComponent,
+            summary_pipe_1.SummaryPipe
         ],
         providers: [tweet_service_1.TweetService,],
         bootstrap: [app_component_1.AppComponent]

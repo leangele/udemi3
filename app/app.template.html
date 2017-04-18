@@ -1,5 +1,23 @@
 <h1>{{title}}</h1>
         <vote [init-Votes]="post.initVotes" [votes]="post.Votes" (change)="eventVote($event)"></vote>
 <br>
-<br>
-<tweets></tweets>
+<ul class="nav nav-pills">
+	<li [class.active]="viewMode=='map'">
+    	<a (click)="viewMode = 'map'">
+        	Map view
+        </a>
+        </li>
+        <li [class.active]="viewMode=='list'">
+        <a (click)="viewMode = 'list'">
+        	List view
+        	</a>
+        </li>
+</ul>
+<div [ngSwitch]="viewMode">
+        <template *ngSwitchCase="'map'" >
+                Map View Content
+        </template>
+        <template *ngSwitchCase="'list'">
+                List View Content
+        </template>
+</div>

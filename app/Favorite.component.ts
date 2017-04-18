@@ -2,14 +2,19 @@ import { Component,Input } from '@angular/core';
 @Component({
     selector:'favorite',
     template:`
-    <i class="glyphicon glyphicon-heart" 
-        [class.highlighted]="isFavorite" 
+    <i class="glyphicon" 
+      
+        [ngClass]="{
+            'glyphicon-star-empty':!isFavorite,
+            'glyphicon-star':isFavorite,
+            'highlighted':isFavorite
+        }"
         (click)="onClick()"></i>
         <span>{{quantity}}</span>
 
     `,
     styles:[`
-    .glyphicon-heart{
+    .glyphicon{
         color:#ccc;
         cursor: pointer;
     }
