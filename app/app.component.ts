@@ -62,10 +62,15 @@
           Title:{{task.title}}
         </li>
         <li>
-          Assigned to:{{task.assignee != null?task.assignee.name:""}}
+          Assigned to:{{task.assignee?.name}}
         </li>
       </ul>
     </div>
+    <bs-panel>
+      <div class="heading">the head!</div>
+      <div class="body">this is the body!</div>
+      <div class="body">this is other body!</div>
+    </bs-panel>
     `
   })
   export class AppComponent {
